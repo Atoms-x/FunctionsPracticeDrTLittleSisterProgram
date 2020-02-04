@@ -47,6 +47,13 @@ int main()
   
    while (contd != 'E' && contd != 'e') //exit loop condition
    {
+     
+    if(cin.fail())
+    {
+      cin.clear();
+      cin.ignore(10000, '\n');
+    }
+   
     int dayInput = 0; //accept day input from the user
     welcomeMessage(); //void function call
 
@@ -76,8 +83,9 @@ int main()
 
     cout << cItalic << "\nI NEED A NUMBER TO CUBE\n" << cReset << endl;
     cin >> powInput;
-    cout << "\nYOUR NUMBER CUBED IS " << fixed << setprecision(4) << numberCube(powInput) << cReset 
-    << endl;
+
+    cout << "\nYOUR NUMBER CUBED IS " << fixed << setprecision(4) 
+    << numberCube(powInput) << cReset << endl;
 
     cout << cRed << cUnderL << "\nCONTINUE? Y (e or E to quit)" << cReset << endl;
     cin >> contd;
